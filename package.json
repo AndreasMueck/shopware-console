@@ -22,20 +22,32 @@
 		"Other"
 	],
 	"activationEvents": [
+		"onCommand:shopware.displayAbout",
 		"onCommand:shopware.cacheClear",
-		"onCommand:shopware.displayAbout"
+		"onCommand:shopware.DalRefreshIndex",
+		"onCommand:shopware.PluginActivate",
 	],
 	"main": "./extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "shopware.cacheClear",
+				"command": "shopware.DisplayAbout",
+				"title": "about",
+				"category": "Shopware"
+			},
+			{
+				"command": "shopware.CacheClear",
 				"title": "cache:clear",
 				"category": "Shopware"
 			},
 			{
-				"command": "shopware.displayAbout",
-				"title": "about",
+				"command": "shopware.DalRefreshIndex",
+				"title": "dal:refresh:index",
+				"category": "Shopware"
+			},
+			{
+				"command": "shopware.PluginActivate",
+				"title": "plugin:activate",
 				"category": "Shopware"
 			}
 		],

@@ -52,37 +52,6 @@ function activate(context) {
 
 	// cache:clear
 	context.subscriptions.push(
-		vscode.commands.registerCommand('shopware.CacheClear', function () {
-			let command = mainShopwareCommand + 'cache:clear'
-			checkTerminal(command)
-		})
-	)
-	
-	// dal:refresh:index
-	context.subscriptions.push(
-		vscode.commands.registerCommand('shopware.DalRefreshIndex', function () {
-			let command = mainShopwareCommand + 'dal:refresh:index'
-			checkTerminal(command)
-		})
-	)
-	// plugin:activate
-	context.subscriptions.push(
-		vscode.commands.registerCommand('shopware.PluginActivate', async function () {
-
-			const result = await vscode.window.showInputBox({
-				title: 'Activate plugin',
-				prompt: 'Enter plugin name',
-			})
-			//vscode.window.showInformationMessage(`Resultat: ${result}`)
-			let command = mainShopwareCommand + 'plugin:activate' + " " + result
-			console.log(command)
-			//checkTerminal(command)
-		})
-	)
-		
-	
-	// cache:clear
-	/* context.subscriptions.push(
 		vscode.commands.registerCommand('shopware.CacheClear', async function () {
 
 			const result = await vscode.window.showInputBox({
@@ -94,7 +63,7 @@ function activate(context) {
 			console.log(command)
 			//checkTerminal(command)
 		})
-	) */
+	)
 }
 
 // this method is called when your extension is deactivated

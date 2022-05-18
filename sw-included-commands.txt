@@ -1,0 +1,19 @@
+about                           Display information about the current project
+
+cache
+    cache:clear                 Clear the cache
+
+dal
+    dal:refresh:index           Refreshes the shop indices
+
+plugin
+*   plugin:activate             Activates given plugins 
+*   plugin:deactivate           Deactivates given plugins
+*   plugin:install              Installs given plugins
+    plugin:list                 Show a list of available plugins
+    plugin:refresh              Refreshes the plugins list in the storage from the file system
+*   plugin:uninstall            Uninstalls given plugins
+*   plugin:update               Updates given plugins
+
+theme
+    theme:compile               Compiles current theme
