@@ -4,7 +4,6 @@ const vscode = require('vscode');
  */
 
 function runcommand(isOpen, command) {
-	//vscode.commands.executeCommand('workbench.action.terminal.new')
 	if (isOpen) {
 		setTimeout(function () {
 			const terminal = vscode.window.terminals[vscode.window.terminals.length - 1]
@@ -21,15 +20,15 @@ function runcommand(isOpen, command) {
 
 function checkTerminal(command) {
 
-	let anzahl = vscode.window.terminals.length;
+	//let anzahl = vscode.window.terminals.length;
 
 	if (vscode.window.terminals.length === 0) {
 		// keine Terminals geöffnet
-		console.log('Anzahl=0: ' + anzahl);
+		//console.log('Anzahl=0: ' + anzahl);
 		runcommand(false, command)
 	} else {
 		// mindestens ein Terminal geöffnet
-		console.log('Anzahl>0: ' + anzahl);
+		//console.log('Anzahl>0: ' + anzahl);
 		runcommand(true, command)
 	}
 }
@@ -40,8 +39,8 @@ function activate(context) {
 	const mainShopwareCommand = pathConfig.get("path") + " "
 
 	/* 
-	Most important shopware CLI commands - related to symfony
-	*/
+	 * Most important shopware CLI commands - related to symfony
+	 */
 
 	// about
 	context.subscriptions.push(
@@ -53,9 +52,17 @@ function activate(context) {
 
 	// cache:clear
 	context.subscriptions.push(
-		vscode.commands.registerCommand('shopware.cacheClear', function () {
-			let command = mainShopwareCommand + 'cache:clear'
-			checkTerminal(command)
+		vscode.commands.registerCommand('shopware.cacheClear', async function () {
+
+			const result = await vscode.window.showInputBox({
+				title: 'Activate plugin',
+				prompt: 'Enter plugin name',
+			})
+
+			//vscode.window.showInformationMessage(`Resultat: ${result}`)
+			let command = mainShopwareCommand + 'cache:clear' + " " + result
+			console.log(command)
+			//checkTerminal(command)
 		})
 	)
 }
