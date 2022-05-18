@@ -156,7 +156,7 @@ function activate(context) {
 		vscode.commands.registerCommand('shopware.PluginUpdate', async function () {
 
 			const result = await vscode.window.showInputBox({
-				title: 'Unpdate plugin',
+				title: 'Update plugin',
 				prompt: 'Enter plugin name',
 			})
 
