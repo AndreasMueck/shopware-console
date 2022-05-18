@@ -57,7 +57,7 @@ function activate(context) {
 			checkTerminal(command)
 		})
 	)
-	
+
 	// dal:refresh:index
 	context.subscriptions.push(
 		vscode.commands.registerCommand('shopware.DalRefreshIndex', function () {
@@ -73,28 +73,110 @@ function activate(context) {
 				title: 'Activate plugin',
 				prompt: 'Enter plugin name',
 			})
-			//vscode.window.showInformationMessage(`Resultat: ${result}`)
-			let command = mainShopwareCommand + 'plugin:activate' + " " + result
-			console.log(command)
-			//checkTerminal(command)
+
+			if ((result === undefined) || (result === "")) {
+				vscode.window.showWarningMessage('Plugin name is missing.')
+			} else {
+				let command = mainShopwareCommand + 'plugin:activate' + " " + result
+				console.log(command)
+				checkTerminal(command)
+			}
 		})
 	)
-		
-	
-	// cache:clear
-	/* context.subscriptions.push(
-		vscode.commands.registerCommand('shopware.CacheClear', async function () {
+	// plugin:deactivate
+	context.subscriptions.push(
+		vscode.commands.registerCommand('shopware.PluginDeactivate', async function () {
 
 			const result = await vscode.window.showInputBox({
-				title: 'Activate plugin',
+				title: 'Deactivate plugin',
 				prompt: 'Enter plugin name',
 			})
-			//vscode.window.showInformationMessage(`Resultat: ${result}`)
-			let command = mainShopwareCommand + 'cache:clear' + " " + result
-			console.log(command)
-			//checkTerminal(command)
+
+			if ((result === undefined) || (result === "")) {
+				vscode.window.showWarningMessage('Plugin name is missing.')
+			} else {
+				let command = mainShopwareCommand + 'plugin:deactivate' + " " + result
+				console.log(command)
+				checkTerminal(command)
+			}
 		})
-	) */
+	)
+	// plugin:install
+	context.subscriptions.push(
+		vscode.commands.registerCommand('shopware.PluginInstall', async function () {
+
+			const result = await vscode.window.showInputBox({
+				title: 'Install plugin',
+				prompt: 'Enter plugin name',
+			})
+
+			if ((result === undefined) || (result === "")) {
+				vscode.window.showWarningMessage('Plugin name is missing.')
+			} else {
+				let command = mainShopwareCommand + 'plugin:install' + " " + result
+				console.log(command)
+				checkTerminal(command)
+			}
+		})
+	)
+	// plugin:list
+	context.subscriptions.push(
+		vscode.commands.registerCommand('shopware.PluginList', function () {
+			let command = mainShopwareCommand + 'plugin:list'
+			checkTerminal(command)
+		})
+	)
+	// plugin:refresh
+	context.subscriptions.push(
+		vscode.commands.registerCommand('shopware.PluginRefresh', function () {
+			let command = mainShopwareCommand + 'plugin:refresh'
+			checkTerminal(command)
+		})
+	)
+	// plugin:uninstall
+	context.subscriptions.push(
+		vscode.commands.registerCommand('shopware.PluginUninstall', async function () {
+
+			const result = await vscode.window.showInputBox({
+				title: 'Uninstall plugin',
+				prompt: 'Enter plugin name',
+			})
+
+			if ((result === undefined) || (result === "")) {
+				vscode.window.showWarningMessage('Plugin name is missing.')
+			} else {
+				let command = mainShopwareCommand + 'plugin:uninstall' + " " + result
+				console.log(command)
+				checkTerminal(command)
+			}
+		})
+	)
+	// plugin:update
+	context.subscriptions.push(
+		vscode.commands.registerCommand('shopware.PluginUpdate', async function () {
+
+			const result = await vscode.window.showInputBox({
+				title: 'Unpdate plugin',
+				prompt: 'Enter plugin name',
+			})
+
+			if ((result === undefined) || (result === "")) {
+				vscode.window.showWarningMessage('Plugin name is missing.')
+			} else {
+				let command = mainShopwareCommand + 'plugin:update' + " " + result
+				console.log(command)
+				checkTerminal(command)
+			}
+		})
+	)
+	// theme:compile
+	context.subscriptions.push(
+		vscode.commands.registerCommand('shopware.ThemeCompile', function () {
+			let command = mainShopwareCommand + 'theme:compile'
+			checkTerminal(command)
+		})
+	)
+
 }
 
 // this method is called when your extension is deactivated

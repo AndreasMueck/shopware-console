@@ -26,6 +26,13 @@
 		"onCommand:shopware.cacheClear",
 		"onCommand:shopware.DalRefreshIndex",
 		"onCommand:shopware.PluginActivate",
+		"onCommand:shopware.PluginDeactivate",
+		"onCommand:shopware.PluginInstall",
+		"onCommand:shopware.PluginList",
+		"onCommand:shopware.PluginRefresh",
+		"onCommand:shopware.PluginUninstall",
+		"onCommand:shopware.PluginUpdate",
+		"onCommand:shopware.ThemeCompile"
 	],
 	"main": "./extension.js",
 	"contributes": {
@@ -48,6 +55,41 @@
 			{
 				"command": "shopware.PluginActivate",
 				"title": "plugin:activate",
+				"category": "Shopware"
+			},
+			{
+				"command": "shopware.PluginDeactivate",
+				"title": "plugin:deactivate",
+				"category": "Shopware"
+			},
+			{
+				"command": "shopware.PluginInstall",
+				"title": "plugin:install",
+				"category": "Shopware"
+			},
+			{
+				"command": "shopware.PluginList",
+				"title": "plugin:list",
+				"category": "Shopware"
+			},
+			{
+				"command": "shopware.PluginRefresh",
+				"title": "plugin:refresh",
+				"category": "Shopware"
+			},
+			{
+				"command": "shopware.PluginUninstall",
+				"title": "plugin:uninstall",
+				"category": "Shopware"
+			},
+			{
+				"command": "shopware.PluginUpdate",
+				"title": "plugin:update",
+				"category": "Shopware"
+			},
+			{
+				"command": "shopware.ThemeCompile",
+				"title": "theme:compile",
 				"category": "Shopware"
 			}
 		],
