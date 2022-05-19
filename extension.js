@@ -3,44 +3,48 @@ const vscode = require('vscode');
  * @param {vscode.ExtensionContext} context
  */
 
-function runcommand(isOpen, command) {
+function createTerminal(){
+	let terminal = vscode.window.createTerminal({
+		name: "SHOPWARE"
+	});
+	terminal.show()
+}
+
+function runCommand(isOpen, command) {
 	if (isOpen) {
+
 		setTimeout(function () {
 			const terminal = vscode.window.terminals[vscode.window.terminals.length - 1]
 			terminal.sendText(command)
 		}, 500)
+
 	} else {
-		vscode.commands.executeCommand('workbench.action.terminal.new')
+
+		createTerminal()
 		setTimeout(function () {
-			const termo = vscode.window.activeTerminal
-			termo.sendText(command)
+			const terminal = vscode.window.activeTerminal
+			terminal.sendText(command)
 		}, 500)
+
 	}
 }
 
 function checkTerminal(command) {
 
-	let anzahl = vscode.window.terminals.length;
-
 	if (vscode.window.terminals.length === 0) {
-		// keine Terminals geöffnet
-		console.log('Anzahl Terminals war = 0: ' + anzahl);
-		runcommand(false, command)
+		// Es ist noch kein Terminal gestartet/geöffnet
+		runCommand(false, command)
 	} else {
-		// mindestens ein Terminal geöffnet
-		console.log('Anzahl Terminals war <> 0: ' + anzahl);
-		runcommand(true, command)
+		// Es ist mindestens ein Terminal gestartet/geöffnet
+		runCommand(true, command)
 	}
 }
 
+// this method is called when your extension is activated
 function activate(context) {
 
 	const pathConfig = vscode.workspace.getConfiguration("superConsole")
 	const mainShopwareCommand = pathConfig.get("path") + " "
-
-	/* 
-	 * Most important shopware CLI commands - related to symfony
-	 */
 
 	// about
 	context.subscriptions.push(
