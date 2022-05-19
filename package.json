@@ -1,6 +1,6 @@
 {
 	"name": "shopware-console",
-	"displayName": "Shopware Console Run Most Important Shopware Commands",
+	"displayName": "Shopware Console Commands",
 	"description": "Run most important Shopware commands from VsCode UI without writing any line.",
 	"publisher": "andreasmueck-vscode",
 	"icon": "images/icon.png",
@@ -14,7 +14,7 @@
 		"url": "https://github.com/AndreasMueck/shopware-console"
 	},
 	"bugs": "https://github.com/AndreasMueck/shopware-console/issues",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"engines": {
 		"vscode": "^1.67.0"
 	},
@@ -22,8 +22,8 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:shopware.displayAbout",
-		"onCommand:shopware.cacheClear",
+		"onCommand:shopware.About",
+		"onCommand:shopware.CacheClear",
 		"onCommand:shopware.DalRefreshIndex",
 		"onCommand:shopware.PluginActivate",
 		"onCommand:shopware.PluginDeactivate",
@@ -38,7 +38,7 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "shopware.DisplayAbout",
+				"command": "shopware.About",
 				"title": "about",
 				"category": "Shopware"
 			},

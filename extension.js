@@ -44,7 +44,7 @@ function activate(context) {
 
 	// about
 	context.subscriptions.push(
-		vscode.commands.registerCommand('shopware.DisplayAbout', function () {
+		vscode.commands.registerCommand('shopware.About', function () {
 			let command = mainShopwareCommand + 'about'
 			checkTerminal(command)
 		})
