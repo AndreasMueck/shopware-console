@@ -20,15 +20,15 @@ function runcommand(isOpen, command) {
 
 function checkTerminal(command) {
 
-	//let anzahl = vscode.window.terminals.length;
+	let anzahl = vscode.window.terminals.length;
 
 	if (vscode.window.terminals.length === 0) {
 		// keine Terminals geöffnet
-		//console.log('Anzahl=0: ' + anzahl);
+		console.log('Anzahl Terminals war = 0: ' + anzahl);
 		runcommand(false, command)
 	} else {
 		// mindestens ein Terminal geöffnet
-		//console.log('Anzahl>0: ' + anzahl);
+		console.log('Anzahl Terminals war <> 0: ' + anzahl);
 		runcommand(true, command)
 	}
 }
@@ -75,7 +75,7 @@ function activate(context) {
 			})
 
 			if ((result === undefined) || (result === "")) {
-				vscode.window.showWarningMessage('Plugin name is missing.')
+				vscode.window.showErrorMessage('Error: Plugin name is missing.')
 			} else {
 				let command = mainShopwareCommand + 'plugin:activate' + " " + result
 				console.log(command)
@@ -93,7 +93,7 @@ function activate(context) {
 			})
 
 			if ((result === undefined) || (result === "")) {
-				vscode.window.showWarningMessage('Plugin name is missing.')
+				vscode.window.showErrorMessage('Error: Plugin name is missing.')
 			} else {
 				let command = mainShopwareCommand + 'plugin:deactivate' + " " + result
 				console.log(command)
@@ -111,7 +111,7 @@ function activate(context) {
 			})
 
 			if ((result === undefined) || (result === "")) {
-				vscode.window.showWarningMessage('Plugin name is missing.')
+				vscode.window.showErrorMessage('Error: Plugin name is missing.')
 			} else {
 				let command = mainShopwareCommand + 'plugin:install' + " " + result
 				console.log(command)
@@ -143,7 +143,7 @@ function activate(context) {
 			})
 
 			if ((result === undefined) || (result === "")) {
-				vscode.window.showWarningMessage('Plugin name is missing.')
+				vscode.window.showErrorMessage('Error: Plugin name is missing.')
 			} else {
 				let command = mainShopwareCommand + 'plugin:uninstall' + " " + result
 				console.log(command)
@@ -161,7 +161,7 @@ function activate(context) {
 			})
 
 			if ((result === undefined) || (result === "")) {
-				vscode.window.showWarningMessage('Plugin name is missing.')
+				vscode.window.showErrorMessage('Error: Plugin name is missing.')
 			} else {
 				let command = mainShopwareCommand + 'plugin:update' + " " + result
 				console.log(command)
