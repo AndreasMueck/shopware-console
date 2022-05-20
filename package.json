@@ -14,7 +14,7 @@
 		"url": "https://github.com/AndreasMueck/shopware-console"
 	},
 	"bugs": "https://github.com/AndreasMueck/shopware-console/issues",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"engines": {
 		"vscode": "^1.67.0"
 	},

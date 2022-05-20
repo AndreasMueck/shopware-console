@@ -107,6 +107,7 @@ function activate(context) {
 	)
 	// plugin:install
 	context.subscriptions.push(
+
 		vscode.commands.registerCommand('shopware.PluginInstall', async function () {
 
 			const result = await vscode.window.showInputBox({
@@ -117,8 +118,19 @@ function activate(context) {
 			if ((result === undefined) || (result === "")) {
 				vscode.window.showErrorMessage('Error: Plugin name is missing.')
 			} else {
-				let command = mainShopwareCommand + 'plugin:install' + " " + result
-				console.log(command)
+				
+				const answer = await vscode.window.showInformationMessage(
+					"Would you like to activate the plugin?",
+					"Yes",
+					"No"
+				)
+				
+				if (answer === "Yes") {
+					var command = mainShopwareCommand + 'plugin:install' + " --activate " + result
+
+				} else {
+					var command = mainShopwareCommand + 'plugin:install' + " " + result
+				}
 				checkTerminal(command)
 			}
 		})
