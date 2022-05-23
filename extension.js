@@ -16,7 +16,7 @@ function runCommand(isOpen, command) {
 		setTimeout(function () {
 			const terminal = vscode.window.terminals[vscode.window.terminals.length - 1]
 			terminal.sendText(command)
-		}, 500)
+		}, 200)
 
 	} else {
 
@@ -24,7 +24,7 @@ function runCommand(isOpen, command) {
 		setTimeout(function () {
 			const terminal = vscode.window.activeTerminal
 			terminal.sendText(command)
-		}, 500)
+		}, 200)
 
 	}
 }
@@ -43,7 +43,7 @@ function checkTerminal(command) {
 // this method is called when your extension is activated
 function activate(context) {
 
-	const pathConfig = vscode.workspace.getConfiguration("superConsole")
+	const pathConfig = vscode.workspace.getConfiguration("shopwareConsole")
 	const mainShopwareCommand = pathConfig.get("path") + " "
 
 	// about

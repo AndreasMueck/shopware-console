@@ -14,7 +14,7 @@
 		"url": "https://github.com/AndreasMueck/shopware-console"
 	},
 	"bugs": "https://github.com/AndreasMueck/shopware-console/issues",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"engines": {
 		"vscode": "^1.67.0"
 	},
@@ -94,7 +94,7 @@
 			}
 		],
 		"configuration": {
-			"title": "superConsole",
+			"title": "shopwareConsole",
 			"properties": {
 				"superConsole.path": {
 					"type": "string",
@@ -122,5 +122,11 @@
 	},
 	"extensionPack": [
 		"andreasmueck.shopware-console"
-	]
+	],
+	"__metadata": {
+		"id": "5201fa86-d2d8-4ea3-b088-9203ed522e31",
+		"publisherDisplayName": "Andreas Mueck",
+		"publisherId": "883a2da2-22d2-4ce7-be84-f27c60032f21",
+		"isPreReleaseVersion": false
+	}
 }

@@ -1,26 +1,23 @@
 # Shopware Console
-
 ## How Can You Use This Extension:
-### 1- (Windows,Linux) CTRL+SHIFT+P
-### 2- (Mac) CMD+SHIFT+P And Select The Command You Want
-
-
+- (Windows,Linux) *CTRL+SHIFT+P* and select the command you want
+- (Mac) *CMD+SHIFT+P* and select the command you want
 ## Set the Console Path in your settings.json file
 ```
-    "superConsole.path": "your console path default is php bin/console"
+    "shopwareConsole.path": "your console path default is php bin/console"
 ```
 ## List Of Availables Commands
 
-| #      | Command                      | Description                                                     |
-| :---   | :---                         | :---                                                            |
-| 1      | about                        | Displays information about the current project                  |
-| 2      | cache:clear                  | Clears the cache                                                |
-| 3      | dal:refresh:index            | Refreshes the shop indices                                      |
-| 4      | plugin:activate              | Activates given plugins                                         |
-| 5      | plugin:deactivate            | Deactivates given plugins                                       |
-| 6      | plugin:install               | Installs given plugins                                          |
-| 7      | plugin:list                  | Shows a list of available plugins                               |
-| 8      | plugin:refresh               | Refreshes the plugins list in the storage from the file system  |
-| 9      | plugin:uninstall             | Uninstalls given plugins                                        |
-| 10     | plugin:update                | Updates given plugins                                           |
-| 11     | theme:compile                | Compiles current theme                                          |
+| Command                        | Description                                                 |
+| :---                           | :---                                                        |
+| `shopware: about`              | Display information about the current project               |
+| `shopware: cache:clear`        | Clear the cache                                             |
+| `shopware: dal:refresh:index`  | Refresh the shop indices                                    |
+| `shopware: plugin:activate`    | Activate given plugins                                      |
+| `shopware: plugin:deactivate`  | Deactivate given plugins                                    |
+| `shopware: plugin:install`     | Install given plugins                                       |
+| `shopware: plugin:list`        | Show a list of available plugins                            |
+| `shopware: plugin:refresh`     | Refresh the plugins list in the storage from the file system|
+| `shopware: plugin:uninstall`   | Uninstall given plugins                                     |
+| `shopware: plugin:update`      | Update given plugins                                        |
+| `shopware: theme:compile`      | Compile current theme                                       |
